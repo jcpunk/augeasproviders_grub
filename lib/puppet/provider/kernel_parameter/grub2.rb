@@ -25,6 +25,7 @@ Puppet::Type.type(:kernel_parameter).provide(:grub2, :parent => Puppet::Type.typ
 
   confine :feature => :augeas
   defaultfor :augeasprovider_grub_version => 2
+  defaultfor :augeasprovider_grub_blscfg => false
   commands :mkconfig => mkconfig_path
 
   # when both grub* providers match, prefer GRUB 2
